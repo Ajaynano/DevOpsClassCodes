@@ -3,4 +3,4 @@ services:
   addressbook:
     build: .
     ports:
-      - '30081:8080'
+      - '40081:8080'
