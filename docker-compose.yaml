@@ -1,6 +1,6 @@
 version: '2'
 services:
-  atmosphere:
+  addressbook:
     build: .
     ports:
-      - '30082:8080'
+      - '30081:8080'
