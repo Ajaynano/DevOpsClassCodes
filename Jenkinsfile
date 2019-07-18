@@ -20,11 +20,12 @@ node {
    }
     
    stage('SonarQube analysis') {
-    def scannerHome = tool 'SonarScanner 4.0';
-    withSonarQubeEnv('sonar-runner') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner"
+    def mvnHome = tool name: 'maven-3', type: 'maven'
+    withSonarQubeEnv('sonar-runner'){
+    sh "${mvnHome}/bin/mvn sonar:sonar"
     }
    }
+
    
    stage('Parallel Jobs')
    parallel "Test Results Publish": {
