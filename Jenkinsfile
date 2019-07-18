@@ -22,7 +22,7 @@ node {
    stage('SonarQube analysis') {
     def mvnHome = tool name: 'mvn', type: 'maven'
     withSonarQubeEnv('sonarqube'){
-    sh "${mvnHome}/opt/apache-maven-3.6.0/bin/mvn sonar:sonar"
+    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
     }
    }
 
