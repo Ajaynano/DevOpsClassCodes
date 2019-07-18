@@ -24,6 +24,7 @@ node {
     withSonarQubeEnv('sonar-runner') { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
+   }
    
    stage('Parallel Jobs')
    parallel "Test Results Publish": {
